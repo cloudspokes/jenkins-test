@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Associations between CMC Assets and the Contacts whom contribute to them</description>
+    <enableActivities>false</enableActivities>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Asset__c</fullName>
+        <description>Which asset did the contributor work on?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Which asset did the contributor work on?</inlineHelpText>
+        <label>Asset</label>
+        <referenceTo>CMC_Asset__c</referenceTo>
+        <relationshipName>Asset_Contributors</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <trackHistory>true</trackHistory>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Who contributed to the development of this asset?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Who contributed to the development of this asset?</inlineHelpText>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Asset Contributors</relationshipLabel>
+        <relationshipName>Asset_Contributors</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Hours_Contributed__c</fullName>
+        <description>Total number of hours that the individual contributed to developing this asset.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total number of hours that the individual contributed to developing this asset.</inlineHelpText>
+        <label>Hours Contributed</label>
+        <precision>6</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Primary_Contact__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is this the primary person to be contacted for any questions regarding the asset?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this the primary person to be contacted for any questions regarding the asset?</inlineHelpText>
+        <label>Primary Contact?</label>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <label>Asset Contributor</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Asset__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Hours_Contributed__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>AC-{0000000}</displayFormat>
+        <label>Name</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Asset Contributors</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>HrsContributedmustbePositive</fullName>
+        <active>true</active>
+        <description>Hrs contributed &gt;= 0</description>
+        <errorConditionFormula>Hours_Contributed__c   &lt;=  0</errorConditionFormula>
+        <errorDisplayField>Hours_Contributed__c</errorDisplayField>
+        <errorMessage>Hours contributed must be &gt; 0</errorMessage>
+    </validationRules>
+</CustomObject>

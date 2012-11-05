@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>CMC_AssetControllerNew</members>
+        <members>CMC_AssetLibraryController</members>
+        <members>CMC_SFURLHelper</members>
+        <members>CMC_TEST_AssetLibrary</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>CMC_AssetLibrary</members>
+        <members>CMC_AssetNew</members>
+        <members>CMC_AssetView</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>CMC_Asset_Contributor__c</members>
+        <members>CMC_Asset__C</members>
+        <members>CMC_Related_Tag__c</members>
+        <members>CMC_Tag__c</members>
+        <name>CustomObject</name>
+    </types>
+    <version>24.0</version>
+</Package>
