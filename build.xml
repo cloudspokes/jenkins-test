@@ -11,4 +11,11 @@
         deployRoot="src"/>
     </target>
 
+    <target name="undeployCode">
+      <sf:deploy username="${sf.username}" 
+        password="${sf.password}" 
+        serverurl="${sf.serverurl}" 
+        deployRoot="src"/>
+    </target>    
+
 </project>
