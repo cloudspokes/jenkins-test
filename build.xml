@@ -8,6 +8,8 @@
         password="${sf.password}" 
         serverurl="${sf.serverurl}" 
         runAllTests="true"
+        trace="true"
+        logType="Detail"
         deployRoot="src"/>
     </target>
 
