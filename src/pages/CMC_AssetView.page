@@ -1,3 +1,0 @@
-<apex:page standardController="CMC_Asset__c" showHeader="true">
-	<apex:detail relatedList="true" title="true" inlineEdit="true" showChatter="true" relatedListHover="true" /> 
-</apex:page>
